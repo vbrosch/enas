@@ -8,7 +8,7 @@ python src/cifar10/main.py \
   --reset_output_dir \
   --data_path="data/cifar10" \
   --output_dir="outputs" \
-  --batch_size=1 \
+  --batch_size=128 \
   --num_epochs=310 \
   --log_every=50 \
   --eval_every_epochs=1 \
