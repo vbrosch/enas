@@ -1,3 +1,5 @@
+*.tar.gz
+palma/enas
 .idea
 outputs*
 outputs/*

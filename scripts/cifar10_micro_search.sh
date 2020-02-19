@@ -2,12 +2,38 @@
 
 export PYTHONPATH="$(pwd)"
 
-python src/cifar10/main.py \
+OUTPUT_DIR = $3
+DATA_DIR = $4
+
+if [ -d $DATA_DIR ]
+then
+    echo "Directory $DATA_DIR exists, we assume that CIFAR-10 is available."
+else
+    echo "Error: Directory $DATA_DIR does not exist. Downloading cifar10 now."
+
+    mkdir -p $DATA_DIR
+
+    wget https://www.cs.toronto.edu/~kriz/cifar-10-python.tar.gz -O $DATA_DIR
+    tar xvf $DATA_DIR/cifar-10-python.tar.gz --directory $DATA_DIR
+    mv $DATA_DIR/cifar-10-batches-py $DATA_DIR/cifar10
+
+fi
+
+if [ -d $OUTPUT_DIR ]
+then
+    echo "Directory $OUTPUT_DIR exists."
+else
+    echo "Error: Directory $OUTPUT_DIR does not exist. Creating it now."
+
+    mkdir -p $OUTPUT_DIR
+fi
+
+python2 src/cifar10/main.py \
   --data_format="NCHW" \
   --search_for="micro" \
   --reset_output_dir \
-  --data_path="data/cifar10" \
-  --output_dir="outputs" \
+  --data_path="$DATA_DIR/cifar10" \
+  --output_dir="$OUTPUT_DIR" \
   --batch_size=160 \
   --num_epochs=150 \
   --log_every=50 \
