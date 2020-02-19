@@ -4,6 +4,7 @@
 #SBATCH --tasks-per-node=1
 #SBATCH --partition=gpuv100
 #SBATCH --gres=gpu:1
+#SBATCH --mem=64G
 #SBATCH --time=12:00:00
 
 #SBATCH --job-name=ENAS_Job
