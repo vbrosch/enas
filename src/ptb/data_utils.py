@@ -1,6 +1,6 @@
 import sys
 import numpy as np
-import tensorflow as tf
+import tensorflow.compat.v1 as tf
 
 
 def ptb_input_producer(raw_data, batch_size, num_steps, shuffle=False,

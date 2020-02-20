@@ -4,7 +4,7 @@ from __future__ import print_function
 
 import sys
 import numpy as np
-import tensorflow as tf
+import tensorflow.compat.v1 as tf
 
 
 user_flags = []

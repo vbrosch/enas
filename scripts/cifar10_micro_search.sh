@@ -2,8 +2,8 @@
 
 export PYTHONPATH="$(pwd)"
 
-OUTPUT_DIR = $3
-DATA_DIR = $4
+OUTPUT_DIR=$1
+DATA_DIR=$2
 
 if [ -d $DATA_DIR ]
 then
@@ -39,11 +39,11 @@ python2 src/cifar10/main.py \
   --log_every=50 \
   --eval_every_epochs=1 \
   --child_use_aux_heads \
-  --child_num_layers=$2 \
+  --child_num_layers=6 \
   --child_out_filters=20 \
   --child_l2_reg=1e-4 \
   --child_num_branches=5 \
-  --child_num_cells=$1 \
+  --child_num_cells=5 \
   --child_keep_prob=0.90 \
   --child_drop_path_keep_prob=0.60 \
   --child_lr_cosine \

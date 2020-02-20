@@ -1,5 +1,5 @@
 import numpy as np
-import tensorflow as tf
+import tensorflow.compat.v1 as tf
 from tensorflow.python.training import moving_averages
 
 from src.common_ops import create_weight
@@ -35,7 +35,7 @@ def conv(x, filter_size, out_filters, stride, name="conv", padding="SAME",
   x = tf.layers.conv2d(
       x, out_filters, [filter_size, filter_size], stride, padding,
       data_format=actual_data_format,
-      kernel_initializer=tf.contrib.keras.initializers.he_normal(seed=seed))
+      kernel_initializer=tf.keras.initializers.he_normal(seed=seed))
 
   return x
 

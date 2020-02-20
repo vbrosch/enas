@@ -1,5 +1,5 @@
 import numpy as np
-import tensorflow as tf
+import tensorflow.compat.v1 as tf
 
 
 def lstm(x, prev_c, prev_h, w):
@@ -26,7 +26,7 @@ def stack_lstm(x, prev_c, prev_h, w):
 
 def create_weight(name, shape, initializer=None, trainable=True, seed=None):
   if initializer is None:
-    initializer = tf.contrib.keras.initializers.he_normal(seed=seed)
+    initializer = tf.keras.initializers.he_normal(seed=seed)
   return tf.get_variable(name, shape, initializer=initializer, trainable=trainable)
 
 

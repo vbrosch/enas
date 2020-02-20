@@ -2,7 +2,7 @@ import os
 import sys
 
 import numpy as np
-import tensorflow as tf
+import tensorflow.compat.v1 as tf
 
 from src.cifar10.image_ops import conv
 from src.cifar10.image_ops import fully_connected

@@ -9,7 +9,7 @@ import sys
 import time
 
 import numpy as np
-import tensorflow as tf
+import tensorflow.compat.v1 as tf
 
 from src import utils
 from src.utils import Logger

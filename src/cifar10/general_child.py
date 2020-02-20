@@ -6,7 +6,7 @@ import os
 import sys
 
 import numpy as np
-import tensorflow as tf
+import tensorflow.compat.v1 as tf
 
 from src.cifar10.models import Model
 from src.cifar10.image_ops import conv

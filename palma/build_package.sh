@@ -4,7 +4,7 @@ PACKAGE_DIR=enas
 
 mkdir -p $PACKAGE_DIR
 
-pip install tensorflow-gpu==1.14.0 numpy Pillow --target $PACKAGE_DIR
+pip install tensorflow-gpu==2.1.0 numpy Pillow --target $PACKAGE_DIR
 
 cp -r ../scripts $PACKAGE_DIR/scripts
 cp -r ../src $PACKAGE_DIR/src

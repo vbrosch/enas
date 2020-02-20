@@ -2,7 +2,7 @@ import os
 import sys
 import cPickle as pickle
 import numpy as np
-import tensorflow as tf
+import tensorflow.compat.v1 as tf
 
 
 def _read_data(data_path, train_files):
